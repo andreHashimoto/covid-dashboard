@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">COVID-19</a>
+</nav>
+
+<div class="container chart-container">
+  <div class="row">
+    <div class="col-md-2">
+      <ul class="list-group mb-4">
+        <li class="list-group-item" routerLinkActive="active" routerLink="new-deaths">Novas Mortes</li>
+        <li class="list-group-item" routerLinkActive="active" routerLink="total-deaths">Total de Mortes</li>
+        <li class="list-group-item" routerLinkActive="active" routerLink="new-cases">Novos Casos</li>
+        <li class="list-group-item" routerLinkActive="active" routerLink="total-cases">Total de Casos</li>
+      </ul>
+    </div>
+
+    <div class="col-md-10">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>

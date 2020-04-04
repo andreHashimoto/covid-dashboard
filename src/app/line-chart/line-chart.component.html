@@ -1,0 +1,29 @@
+<div class="country-selector">
+        <div class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+                <select class="form-control" [(ngModel)]="selectedCountry">
+                    <option disabled [value]="null">Country</option>
+                    <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+                </select>
+            </div>
+            <button (click)="addCountry()" class="btn btn-primary mb-2">Add</button>
+            <div class="form-group mx-sm-3 mb-2">
+                <select class="form-control" (change)="changeScale($event)">
+                    <option value="linear">Linear</option>
+                    <option value="logarithmic">Logarithmic</option>
+                </select>
+            </div>
+        </div>
+</div>
+
+<div class="chart-wrapper">
+    <canvas #lineChart baseChart 
+        [datasets]="lineChartData" 
+        [labels]="lineChartLabels" 
+        [options]="lineChartOptions"
+        [colors]="lineChartColors" 
+        [legend]="lineChartLegend" 
+        [chartType]="lineChartType" 
+        [plugins]="lineChartPlugins">
+    </canvas>
+</div>
